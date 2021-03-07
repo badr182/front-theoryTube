@@ -1,0 +1,39 @@
+<div class="container-fluid ct-space-user">
+    <div class="row ct-user">
+
+        <div class="col-lg-3">
+            <ul class="side-nav">
+                <li><i class="fas fa-user-md"></i> <a [routerLink]="['']" routerLinkActive="router-link-active">Home</a></li>
+                <li><i class="fas fa-rocket"></i> <a href="">Lorem ipsum </a></li>
+                <li><i class="fas fa-journal-whills"></i> <a href="">dolor sit</a></li>
+                <li><i class="fas fa-journal-whills"></i> <a href="">amet consectetur</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-9">
+
+            <div class="row">
+                <div *ngFor="let video of videos" class="col-lg-3">
+                    <div class="ct-video">
+                        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video" allowfullscreen></iframe>
+                        <p class="title">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div *ngFor="let video of videos" class="col-lg-3">
+                    <div class="ct-video">
+                        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video" allowfullscreen></iframe>
+                        <p class="title">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div *ngFor="let video of videos" class="col-lg-3">
+                    <div class="ct-video">
+                        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video" allowfullscreen></iframe>
+                        <p class="title">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="">
+                <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video" allowfullscreen></iframe>
+            </div> -->
+        </div>
+    </div>
+</div>

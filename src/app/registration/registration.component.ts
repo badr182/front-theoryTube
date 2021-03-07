@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -29,7 +30,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   errors:Array<String> = [];
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit() {
   }
@@ -39,16 +40,24 @@ export class RegistrationComponent implements OnInit {
     // optional: address, code postal , phone 
 
     // required: email, name, surname, password, date of birth, city 
-    console.log(data.value);
+    // console.log(data.value);
     this.isEmail(data.value.email);
     this.isEmpty(data.value.name, "name");
     this.isEmpty(data.value.surname, "surname");
     this.isEmpty(data.value.city, "city");
+    this.isEmpty(data.value.typeUser, "typeUser");
     this.checkPassword(data.value.password,data.value.confirmPassword);
 
     
-    console.log(this.errors);
-    
+    // console.log( this.errors.length );
+    if ( this.errors.length == 0){
+      
+      let res = this.userService.regsitration(data.value);
+      if (!res){
+        this.errors.push("Email Already exist")
+      }
+    }
+
   }
 
   isEmpty(filed,name:string){
