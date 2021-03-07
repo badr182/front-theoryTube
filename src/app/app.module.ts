@@ -11,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
+import { UploadComponent } from './upload/upload.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { UserComponent } from './user/user.component';
     HomeComponent,
     NavBarComponent,
     RegistrationComponent,
-    UserComponent,    
+    UserComponent,
+    UploadComponent,    
   ],
   imports: [
     BrowserModule,

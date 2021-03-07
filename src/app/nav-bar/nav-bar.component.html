@@ -1,4 +1,4 @@
-<div class="collapse" id="navbarToggleExternalContent">
+<div class="collapse fixed-top" id="navbarToggleExternalContent">
     <div class="bg-light p-4">
         <h5 class="text-white h4">Collapsed content</h5>
         <!-- <span class="text-muted">Toggleable via the navbar brand.</span> -->
@@ -24,7 +24,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse d-flex justify-content-between d-sm-none .d-md-block" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse d-flex justify-content-between d-sm-none d-none" id="navbarSupportedContent">
             <div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -50,6 +50,17 @@
 
             <div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Inloggen
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Upload</a></li>
+                          
+                        </ul>
+                    </li> -->
                     <li class="nav-item">
 
                         <button type="button" [routerLink]="['registration']" routerLinkActive="router-link-active" class="btn btn-light">Sign up</button>

@@ -24,12 +24,44 @@
 
 // video
 .video {
-    width: inherit;
+    width: 100%;
 }
 
 .video iframe {
-    height: 600px;
     width: 100%;
+}
+
+@media only screen and (max-width: 575px) {
+    /* Styles */
+    .video iframe {
+        height: 300px;
+    }
+}
+
+
+/* iPads (landscape) ----------- */
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .video iframe {
+        height: 400px;
+    }
+}
+
+
+/* iPads (portrait) ----------- */
+
+@media only screen and (min-width: 766px) and (max-width: 991px) {
+    /* Styles */
+    .video iframe {
+        height: 450px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    /* Styles */
+    .video iframe {
+        height: 500px;
+    }
 }
 
 .title-video {
