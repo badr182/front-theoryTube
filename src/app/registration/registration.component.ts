@@ -50,13 +50,20 @@ export class RegistrationComponent implements OnInit {
 
     
     // console.log( this.errors.length );
-    if ( this.errors.length == 0){
+    //if ( this.errors.length == 0){
       
-      let res = this.userService.regsitration(data.value);
-      if (!res){
-        this.errors.push("Email Already exist")
+      //let res = this.userService.regsitration(data.value);      
+      // if (!res){
+      //   this.errors.push("Email Already exist")
+      // }
+    //}
+
+    this.userService.regsitration(data.value).subscribe(
+      (data ) => {
+        console.log(data);
+        
       }
-    }
+    ) ;      
 
   }
 

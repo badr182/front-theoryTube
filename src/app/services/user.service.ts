@@ -6,13 +6,15 @@ import { HttpClient} from '@angular/common/http'
 })
 export class UserService {
 
-  private host: string = "loclhost:8082";
+  private host: string = "http://localhost:8080";
   constructor(private http:HttpClient) { }
 
   regsitration(data){    
-    const url = `${this.host}/registration`
-    // this.http.post(url,data)
-    return false;
+    const url = `${this.host}/api/registration`
+    //console.log(data);
+    
+    return this.http.post(url,data)
+    // return false;
   }
 
   login(user){
