@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient} from '@angular/common/http'
+import { HttpClient, HttpHeaders} from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
@@ -10,10 +10,15 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   regsitration(data){    
-    const url = `${this.host}/api/registration`
+    const url = `${this.host}/api/register`
     //console.log(data);
-    
-    return this.http.post(url,data)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Accept':  'application/json'
+        //Authorization: 'my-auth-token'
+      })
+    };
+    return this.http.post(url,data,httpOptions)
     // return false;
   }
 
