@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http'
 })
 export class UserService {
 
-  private host: string = "http://localhost:8080";
+  private host: string = "http://127.0.0.1:8080";                        
   constructor(private http:HttpClient) { }
 
   regsitration(data){    

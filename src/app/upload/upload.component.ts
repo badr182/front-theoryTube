@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UploadService } from '../services/upload.service';
 
 @Component({
   selector: 'app-upload',
@@ -13,7 +14,7 @@ export class UploadComponent implements OnInit {
 
   formData: NgForm
 
-  constructor() { }
+  constructor(private uploadService:UploadService) { }
 
   ngOnInit() {
   }
@@ -21,7 +22,19 @@ export class UploadComponent implements OnInit {
   onSubmit(){
     const fileUpload = this.fileUpload.nativeElement;    
     
-    console.log(fileUpload.files);
+    console.log(fileUpload.files[0]);
+
+    
+    this.uploadService.upload(fileUpload.files[0]).subscribe(
+      (data)=>{
+        console.log(data);
+        
+      },
+      err=>{
+        console.log(err);
+        
+      }
+    )
     
     for (let index = 0; index < fileUpload.files.length; index++) {
       // const file = fileUpload.files[index];

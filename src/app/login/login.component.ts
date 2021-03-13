@@ -25,11 +25,12 @@ export class LoginComponent implements OnInit {
     if ( this.email != "" && this.password != ""){
       this.userService.login(data.value).subscribe(
         (data) => {
+
           console.log(data);
           // write in localstorage
           localStorage.setItem("user","XCFGE");
           // redirection 
-          this.router.navigate(["/user"]);
+          //this.router.navigate(["/user"]);
         },
         err =>{
           //console.log(err.error.error);
