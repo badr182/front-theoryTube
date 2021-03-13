@@ -23,8 +23,24 @@ export class UserService {
   }
 
   login(user){
-    const url = `${this.host}/login`
-    // this.http.post(url,user)
-    return false;
+    const url = `${this.host}/api/login`
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Accept':  'application/json'
+        //Authorization: 'my-auth-token'
+      })
+    };
+    return this.http.post(url,user,httpOptions)
+    // return false;
+  }
+
+  isLoggedIn(){
+    // const momentExpiration = this.getExpiration();
+    const token = localStorage.getItem("user");
+    if( token ){
+      // return moment().isBefore(this.getExpiration());
+      return true;
+    }
+    return false
   }
 }

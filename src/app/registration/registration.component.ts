@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -30,7 +31,9 @@ export class RegistrationComponent implements OnInit {
   }
 
   errors = {};
-  constructor(private userService:UserService) { }
+  created:boolean = false;
+  constructor(private userService:UserService,
+    private router:Router) { }
 
   ngOnInit() {
   }
@@ -65,8 +68,10 @@ export class RegistrationComponent implements OnInit {
     this.userService.regsitration(data.value)
     .subscribe(
       (data ) => {
-        console.log("Success");
+        // console.log("Success");
         //console.log(data['errors']);
+        this.created = true;
+        //this.formRegistration = null;
       },
      err =>{
        console.log(err.error.errors);

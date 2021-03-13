@@ -2,7 +2,10 @@
     <div class="container  mt-5">
         <div class="row mt-5">
 
+
             <div class="col-lg-6 shadow ct-form offset-lg-3">
+
+
                 <h4 class="title-form mb-5 text-center">Register</h4>
                 <div *ngIf="errors">
                     <p class="error" *ngFor="let error of errors.email">{{ error }} </p>
@@ -14,6 +17,10 @@
                     <p class="error" *ngFor="let error of errors.password">{{ error }} </p>
                 </div>
 
+                <div *ngIf="created" class="alert alert-success alert-dismissible fade show" role="alert">
+                    Your account was successfully created.<small>You can now <a [routerLink]="['/login']">login</a> </small>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
 
                 <form (ngSubmit)="onSubmit(formData)" #formData="ngForm" class="mt-3">
                     <div class="row mb-3">
