@@ -1,22 +1,22 @@
 <div class="container-fluid ct-space-user">
     <div class="row ct-user">
 
-        <div class="col-lg-3 col-xxl-2 col-md-3">
+        <div class="col-lg-3 col-xxl-2 col-md-4">
             <ul class="side-nav">
                 <li><i class="fas fa-user-md"></i> <a [routerLink]="['']" routerLinkActive="router-link-active">Home</a></li>
-                <li><i class="fas fa-rocket"></i> <a href="#">Lorem ipsum </a></li>
-                <li><i class="fas fa-journal-whills"></i> <a href="#">dolor sit</a></li>
-                <li><i class="fas fa-journal-whills"></i> <a href="#">amet consectetur</a></li>
+                <li><i class="fas fa-rocket"></i> <a [routerLink]="['']">Lorem ipsum </a></li>
+                <li><i class="fas fa-journal-whills"></i> <a [routerLink]="['']">dolor sit</a></li>
+                <li><i class="fas fa-journal-whills"></i> <a [routerLink]="['']">amet consectetur</a></li>
             </ul>
         </div>
 
-        <div class="col-lg-9  col-md-9 col-xxl-10">
+        <div class="col-lg-9  col-md-8 col-xxl-10">
 
             <div class="row">
-                <div *ngFor="let video of videos" class="col-lg-4 col-xxl-3 col-md-6">
-                    <div class="ct-video">
+                <div *ngFor="let video of videos" class="col-lg-4 col-xxl-3 col-md-12">
+                    <div class="ct-video mb-5">
                         <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video" allowfullscreen></iframe>
-                        <p class="title">Lorem ipsum dolor sit amet</p>
+                        <h3 class="title">Lorem ipsum dolor sit amet</h3>
                     </div>
                 </div>
                 <!-- <div *ngFor="let video of videos" class="col-lg-3">

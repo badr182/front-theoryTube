@@ -11,7 +11,24 @@
                 <div class="card-body card-block">
                     <form (ngSubmit)="onSubmit(formData)" #formData="ngForm" enctype="multipart/form-data" class="form-horizontal">
 
+                        <div class="row form-group">
+                            <div class="col-12 col-md-12">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Title</label>
+                                    <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="title">
 
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-12 col-md-12">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Description</label>
+                                    <textarea [(ngModel)]="description" name="description" class="form-control" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row form-group">
                             <div class="col-12 col-md-12">

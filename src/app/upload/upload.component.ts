@@ -13,7 +13,12 @@ export class UploadComponent implements OnInit {
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef;
 
   formData: NgForm
+  title:string="";
+  description:string = "";
 
+  success:string = "";
+  error:string = "";
+  
   constructor(private uploadService:UploadService) { }
 
   ngOnInit() {
@@ -22,10 +27,18 @@ export class UploadComponent implements OnInit {
   onSubmit(){
     const fileUpload = this.fileUpload.nativeElement;    
     
-    console.log(fileUpload.files[0]);
+    // console.log(fileUpload.files[0]);
+    console.log(this.title);
+    console.log(this.description);    
+    let formData = new FormData();
 
     
-    this.uploadService.upload(fileUpload.files[0]).subscribe(
+
+    formData.append('file', fileUpload.files[0]);
+    formData.append('titile', "test");
+    formData.append('description', "test");
+    
+    this.uploadService.upload(formData).subscribe(
       (data)=>{
         console.log(data);
         

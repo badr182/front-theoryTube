@@ -1,13 +1,24 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders} from '@angular/common/http'
+import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private host: string = "http://127.0.0.1:8080";                        
+  private host: string = "http://127.0.0.1:8080";     
+  
+  
+  private messageSource = new BehaviorSubject('default message');
+  currentMessage = this.messageSource.asObservable();
+
   constructor(private http:HttpClient) { }
+
+
+  changeMessage(message: string) {
+    this.messageSource.next(message)
+  }
 
   regsitration(data){    
     const url = `${this.host}/api/register`
@@ -34,6 +45,10 @@ export class UserService {
     // return false;
   }
 
+  logout(){
+    localStorage.removeItem("user");
+  }
+
   isLoggedIn(){
     // const momentExpiration = this.getExpiration();
     const token = localStorage.getItem("user");
@@ -41,6 +56,10 @@ export class UserService {
       // return moment().isBefore(this.getExpiration());
       return true;
     }
-    return false
+    return false    
+  }
+
+  getCurrentUser(){
+    return JSON.parse(localStorage.getItem("user"))
   }
 }

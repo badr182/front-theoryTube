@@ -19,8 +19,9 @@
             <ul class="navbar-nav mx-auto mt-2 mb-lg-0">
 
                 <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" [routerLink]="['user']">videos</a></li>
                 <li><a class="dropdown-item" [routerLink]="['upload']">Upload</a></li>
-                <li><a class="dropdown-item" href="#">logout</a></li>
+                <li><a class="dropdown-item" (click)="logout()">logout</a></li>
             </ul>
         </div>
 
@@ -63,13 +64,14 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li *ngIf="isLogin == true" class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Obama
+                            {{ username }}
                             <i class="fas fa-user"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['user']">video</a></li>
                             <li><a class="dropdown-item" [routerLink]="['upload']">Upload</a></li>
-                            <li><a class="dropdown-item" href="#">logout</a></li>
+                            <li><a class="dropdown-item" (click)="logout()">logout</a></li>
 
                         </ul>
                     </li>
