@@ -9,6 +9,15 @@
                 </div>
 
                 <div class="card-body card-block">
+                    <div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ success }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ error }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
                     <form (ngSubmit)="onSubmit(formData)" #formData="ngForm" enctype="multipart/form-data" class="form-horizontal">
 
                         <div class="row form-group">

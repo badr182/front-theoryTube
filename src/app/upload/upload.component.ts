@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UploadService } from '../services/upload.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-upload',
@@ -19,7 +20,7 @@ export class UploadComponent implements OnInit {
   success:string = "";
   error:string = "";
   
-  constructor(private uploadService:UploadService) { }
+  constructor(private uploadService:UploadService, private userService:UserService) { }
 
   ngOnInit() {
   }
@@ -28,24 +29,29 @@ export class UploadComponent implements OnInit {
     const fileUpload = this.fileUpload.nativeElement;    
     
     // console.log(fileUpload.files[0]);
-    console.log(this.title);
-    console.log(this.description);    
+    
     let formData = new FormData();
 
     
 
     formData.append('file', fileUpload.files[0]);
-    formData.append('titile', "test");
-    formData.append('description', "test");
+    formData.append('title', this.title);
+    formData.append('description', this.description);
+
+    formData.append('role', this.userService.getCurrentUser()["role"]);
+    formData.append('id', this.userService.getCurrentUser()["id"]);
+    
     
     this.uploadService.upload(formData).subscribe(
       (data)=>{
-        console.log(data);
-        
+        //console.log(data);
+        this.success = data["success"] ;
+        this.fileUpload.nativeElement.value = "";
+        this.title = "";
+        this.description = "";
       },
-      err=>{
-        console.log(err);
-        
+      err=>{        
+        this.error = "Please retry again with valid information" ;
       }
     )
     
