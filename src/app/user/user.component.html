@@ -4,31 +4,42 @@
         <div class="col-lg-3 col-xxl-2 col-md-4">
             <ul class="side-nav">
                 <li><i class="fas fa-user-md"></i> <a [routerLink]="['']" routerLinkActive="router-link-active">Home</a></li>
-                <li><i class="fas fa-rocket"></i> <a [routerLink]="['']">Lorem ipsum </a></li>
-                <li><i class="fas fa-journal-whills"></i> <a [routerLink]="['']">dolor sit</a></li>
-                <li><i class="fas fa-journal-whills"></i> <a [routerLink]="['']">amet consectetur</a></li>
+                <li><i class="fas fa-rocket"></i> <a [routerLink]="['']">Theoriecursus </a></li>
+                <li><i class="fas fa-journal-whills"></i> <a [routerLink]="['']">Uitlegvideo’s</a></li>
+                <li><i class="fas fa-journal-whills"></i> <a [routerLink]="['']">Samenvatting</a></li>
+                <!-- <li><i class="fas fa-journal-whills"></i> <a [routerLink]="['']">Verkeersbordentraining</a></li> -->
+                <li><i class="fas fa-journal-whills"></i> <a [routerLink]="['']">Oefenexamens</a></li>
             </ul>
         </div>
 
         <div class="col-lg-9  col-md-8 col-xxl-10">
 
             <div class="row">
-                <div *ngFor="let video of videos" class="col-lg-4 col-xxl-3 col-md-12">
+                <!-- *ngFor="let video of videos" -->
+                <div class="col-lg-4 col-xxl-3 col-md-12" *ngFor="let video of videos">
                     <div class="ct-video mb-5">
-                        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video" allowfullscreen></iframe>
-                        <h3 class="title">Lorem ipsum dolor sit amet</h3>
+                        <!-- <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video" allowfullscreen></iframe> -->
+                        <!-- <iframe src="../../../opt/lampp/htdocs/learn/project-THEORYTUBE/therorietube_backend/public/uploads/test_file.mp4" title=" YouTube video " allowfullscreen></iframe> -->
+                        <!-- <iframe [src]="'http://localhost:8080/uploads/test_file.mp4' | safe" title=" YouTube video " allowfullscreen></iframe> -->
+                        <!-- <p> {{ getURL(video.path) }} </p> -->
+                        <video width="270" height="220" controls disabled="true">   
+                            <source src="http://localhost:8080/uploads/{{ video.title }}.{{ video.extension }}" type="video/mp4">   
+                            </video>
+
+                        <h3 class="title ">{{ video.title }}</h3>
+
                     </div>
                 </div>
-                <!-- <div *ngFor="let video of videos" class="col-lg-3">
-                    <div class="ct-video">
-                        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video" allowfullscreen></iframe>
-                        <p class="title">Lorem ipsum dolor sit amet</p>
+                <!-- <div *ngFor="let video of videos " class="col-lg-3 ">
+                    <div class="ct-video ">
+                        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM " title="YouTube video " allowfullscreen></iframe>
+                        <p class="title ">Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
-                <div *ngFor="let video of videos" class="col-lg-3">
-                    <div class="ct-video">
-                        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video" allowfullscreen></iframe>
-                        <p class="title">Lorem ipsum dolor sit amet</p>
+                <div *ngFor="let video of videos " class="col-lg-3 ">
+                    <div class="ct-video ">
+                        <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM " title="YouTube video " allowfullscreen></iframe>
+                        <p class="title ">Lorem ipsum dolor sit amet</p>
                     </div>
                 </div> -->
             </div>

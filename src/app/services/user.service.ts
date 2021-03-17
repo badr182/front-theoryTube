@@ -14,11 +14,23 @@ export class UserService {
   currentMessage = this.messageSource.asObservable();
 
   constructor(private http:HttpClient) { }
-
+  
+  getVideos(){
+    const url = `${this.host}/api/homevideos`
+    //console.log(data);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Accept':  'application/json'
+        //Authorization: 'my-auth-token'
+      })
+    };
+    return this.http.get(url,httpOptions)
+  }
 
   changeMessage(message: string) {
     this.messageSource.next(message)
   }
+
 
   regsitration(data){    
     const url = `${this.host}/api/register`
@@ -62,4 +74,6 @@ export class UserService {
   getCurrentUser(){
     return JSON.parse(localStorage.getItem("user"))
   }
+
+  
 }

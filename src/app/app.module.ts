@@ -12,6 +12,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { UploadComponent } from './upload/upload.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { UploadComponent } from './upload/upload.component';
     NavBarComponent,
     RegistrationComponent,
     UserComponent,
-    UploadComponent,    
+    UploadComponent,
+    SafePipe,    
   ],
   imports: [
     BrowserModule,

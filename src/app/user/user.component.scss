@@ -50,14 +50,16 @@
  
  @media only screen and (max-width: 575px) {
      /* Styles */
-     .ct-video iframe {
+     .ct-video iframe,
+     video {
          height: 300px;
      }
  }
  /* iPads (landscape) ----------- */
  
  @media only screen and (min-width: 576px) and (max-width: 767px) {
-     .ct-video iframe {
+     .ct-video iframe,
+     video {
          height: 400px;
      }
  }
@@ -65,19 +67,22 @@
  
  @media only screen and (min-width: 768px) and (max-width: 991px) {
      /* Styles */
-     .ct-video iframe {
+     .ct-video iframe,
+     video {
          height: 350px;
      }
  }
  
  @media only screen and (min-width: 992px) and (max-width: 1199px) {
      /* Styles */
-     .ct-video iframe {
+     .ct-video iframe,
+     video {
          height: 270px;
      }
  }
  
- .ct-video iframe {
+ .ct-video iframe,
+ video {
      width: 100%;
      //  height: 100%;
  }
