@@ -15,6 +15,7 @@
                     <p class="error" *ngFor="let error of errors.birth_date">{{ error }} </p>
                     <p class="error" *ngFor="let error of errors.phone">{{ error }} </p>
                     <p class="error" *ngFor="let error of errors.password">{{ error }} </p>
+                    <p class="error" *ngFor="let error of errors.address">{{ error }} </p>
                 </div>
 
                 <div *ngIf="created" class="alert alert-success alert-dismissible fade show" role="alert">
